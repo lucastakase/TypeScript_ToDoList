@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Task Manager</h1>
+        <button id="toggleMode" class="btn btn-primary mb-3">Switch to Reminder Mode</button>
+
+        <!-- Todo Form -->
+        <form id="todoForm">
+            <div class="form-group">
+                <label for="todoDescription">Todo Description</label>
+                <input type="text" class="form-control" id="todoDescription" name="todoDescription" required>
+            </div>
+            <button type="submit" class="btn btn-success">Add Todo</button>
+        </form>
+
+        <!-- Reminder Form -->
+        <form id="reminderForm" style="display: none;">
+            <div class="form-group">
+                <label for="reminderDescription">Reminder Description</label>
+                <input type="text" class="form-control" id="reminderDescription" name="reminderDescription" required>
+            </div>
+            <div class="form-group">
+                <label for="reminderDate">Reminder Date</label>
+                <input type="date" class="form-control" id="reminderDate" name="reminderDate" required>
+            </div>
+            <div class="form-group">
+                <label for="notifications">Notification Platform</label>
+                <select class="form-control" id="notifications" name="notifications" required>
+                    <option value="SMS">SMS</option>
+                    <option value="EMAIL">EMAIL</option>
+                    <option value="PUSH_NOTIFICATION">Push Notification</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Add Reminder</button>
+        </form>
+
+        <!-- Task List -->
+        <h2 class="mt-4">Tasks</h2>
+        <ul id="taskList" class="list-group mt-4"></ul>
+    </div>
+
+    <script src="./dist/index.js"></script>
+</body>
+</html>
